@@ -5,4 +5,12 @@
 <app-server></app-server>
 <br/>
 <app-servers></app-servers>
-
+<br/>
+<!--<button class="btn btn-primary" (click)="showSecret = !showSecret">Display Details</button>-->
+<button class="btn btn-primary" (click)="onToggleDisplay()">Display Details</button>
+<p *ngIf="showSecret">Secret Password = tuna</p>
+<div *ngFor="let logItem of log"
+     [ngStyle]="{backgroundColor: logItem%2 === 0 ? 'red' : 'green'}"
+     [ngClass]="{'white-text' : logItem%2 === 0}">
+  {{logItem}}
+</div>
